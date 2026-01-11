@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # จุด (.index html) หมายถึงให้อัปโหลดไฟล์ทั้งหมดในโฟลเดอร์หลัก (รวม index.html)
-          path: '.'
+          path: 'index.html'
 
       - name: Deploy to GitHub Pages
         id: deployment
