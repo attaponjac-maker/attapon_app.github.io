@@ -1,8 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy Static Content to Pages
+
 on:
   push:
-    branches: ["main"] # ทำงานเมื่อมีการแก้โค้ดที่ main
-  workflow_dispatch:   # ปุ่มกดรันเองด้วยมือ
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -29,7 +30,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.index.html' # โฟลเดอร์ที่เก็บไฟล์ index.html (ถ้าอยู่ข้างนอกสุดใส่จุด .)
+          # จุด (.index html) หมายถึงให้อัปโหลดไฟล์ทั้งหมดในโฟลเดอร์หลัก (รวม index.html)
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
